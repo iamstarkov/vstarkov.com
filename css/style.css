@@ -1,0 +1,39 @@
+.logo {
+	width: 62px;
+	height: 62px;
+	margin-top: -17px;
+	margin-bottom: -17px;
+	margin-right: 12px;
+}
+
+.dabblet {
+	width: 100%;
+    height: 600px;
+}
+
+
+.modal--iframe {
+	width: 90%;
+	height: 70%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.daynumber--index {
+	float: left;
+	text-align: center;
+	width: 4em;
+	font-weight: bold;
+}
+
+.about-image {
+	position: absolute;
+	bottom: 0;
+	z-index: -1;
+	max-height: 100%;
+	right: 0;
+}
+
+.lead--about {
+	color: #1496bb;
+}
