@@ -1,24 +1,159 @@
----
-layout: default
-title: Владимир Старков — технический блог
----
-<div class="hide">asd</div>
+<!doctype html>
+<html dir="LTR" lang="en">
+<head>
+	<meta charset="utf-8" />
+	<title>Владимир Старков — технический блог</title>
+	
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<meta name="viewport" content="width=device-width">
+
+	<link rel="shortcut icon" href="/favicon.ico">
+	<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+	<link href="/css/bootstrap.min.css" rel="stylesheet" />
+	<link href="/css/bootstrap.neg-offset.css" rel="stylesheet" />
+	<link href="/css/style.css" rel="stylesheet" />
+
+	<link href="/atom.xml" title="Владимир Старков — технический блог" rel="alternate" type="application/atom+xml" />
+
+	<meta name="google-site-verification" content="XodcflMjIifcToRCz8TgYAd2zySNqmAE6IKbqmqnd2o" />
+
+</head>
+<body>
+
+
+<div class="wrap">
+	<div class="navbar">
+		<div class="navbar-inner">
+			<div class="container">
+
+				<!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+				<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</a>
+
+				<!-- Be sure to leave the brand out there if you want it shown -->
+				<a class="brand" href="#">
+					<a class="brand" href="/">
+						<img src="/img/logo.svg" class="logo pull-left" alt="" />
+						Vladimir Starkov
+					</a>
+				</a>
+
+				<!-- Everything you want hidden at 940px or less, place within here -->
+				<div class="nav-collapse collapse">
+					<ul class="nav">
+						<li><a href="/about/">About</a></li>
+						<li><a href="/atom.xml">RSS</a></li>
+					</ul>
+					<ul class="nav pull-right">
+						<li>
+							<a href="http://vstarkov.ru">
+								Русский сайт
+							</a>
+						</li>
+					</ul>
+				</div>
+
+			</div>
+		</div>
+	</div>
+	<!-- /HEADER -->
+	
+	<div class="container">
+		<div class="row">
+			<div class="hide">asd</div>
 <div class="span6 offset3">
-	{% for year in site.years %}
-		<h2>{{ year.first.first.date | date: "%Y" }}</h2>
-		{% for month in year %}
+	
+		<h2>2012</h2>
+		
 			<h3>
-				{{ month.first.date | date: "%B" | replace:"January",site.i18n_january | replace:"February",site.i18n_february | replace:"March",site.i18n_march | replace:"April",site.i18n_april | replace:"May",site.i18n_may | replace:"June",site.i18n_june | replace:"July",site.i18n_july | replace:"August",site.i18n_august | replace:"September",site.i18n_september | replace:"October",site.i18n_october | replace:"November",site.i18n_november | replace:"December",site.i18n_december}}
+				July
 			</h3>
-			{% for post in month %}
+			
 				<div>
 					<div class="daynumber--index">
-						{{post.date  | date: "%d"}}
+						23
 					</div>
 
-					<a href="{{ post.url}}">{{ post.title }}</a>
+					<a href="/specs/">Printer-friendly versions of specifications</a>
 				</div>
-			{% endfor %}
-		{% endfor %}
-	{% endfor %}
+			
+				<div>
+					<div class="daynumber--index">
+						11
+					</div>
+
+					<a href="/jsfiddle/">jsFiddle.net</a>
+				</div>
+			
+		
+	
 </div>
+		</div>
+	</div>
+
+</div>
+
+
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/plugins/fotorama.js"></script>
+<link  href="/js/plugins/fotorama.css" rel="stylesheet" />
+<script>
+	fotoramaDefaults = {
+		transition: 'fade',
+		loop: true,
+		nav: 'dots',
+		navPosition: 'top',
+		caption: 'overlay'
+	}
+
+	$(function() {
+
+		(function(){
+			var links = $('[data-target="#iframe-modal"]'),
+				modal = $('#iframe-modal');
+				modal_iframe = $('#iframe-modal iframe.dabblet');
+
+			if (!links[0]) return -1;	
+			if (!modal_iframe[0]) return -1;
+
+			links.on('click', function(event) {
+
+				modal.css({
+					'margin-left': -(modal.width()/2)
+				})
+				modal_iframe.attr('src', $(this).prop('href'))
+
+				event.preventDefault()
+			})
+		})()
+
+	});
+</script>
+
+
+<!-- Modal -->
+<div id="iframe-modal" class="modal modal--iframe hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal-body">
+		<iframe class="dabblet"> </iframe>
+	</div>
+	<div class="modal-footer">
+		<button class="btn btn-primary" data-dismiss="modal" aria-hidden="true">Close</button>
+	</div>
+</div>
+
+
+<script>
+	var _gaq=[['_setAccount','UA-33247628-1'],['_trackPageview']];
+	(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+	g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+	s.parentNode.insertBefore(g,s)}(document,'script'));
+</script>
+
+</body>
+</html>
