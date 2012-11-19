@@ -1,104 +1,27 @@
+---
+layout: nil
+---
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
  
- <title>Vladimir Starkov; Tech Blog</title>
- <link href="http://vstarkov.com/atom.xml" rel="self"/>
- <link href="http://vstarkov.com"/>
- <updated>2012-11-19T13:32:34+06:00</updated>
- <id>http://vstarkov.com</id>
+ <title>{{ site.site_title }}</title>
+ <link href="{{site.site_url}}{{ site.site_rss }}" rel="self"/>
+ <link href="{{site.site_url}}"/>
+ <updated>{{ site.time | date_to_xmlschema }}</updated>
+ <id>{{site.site_url}}</id>
  <author>
-   <name>Vladimir Starkov; Tech Blog</name>
-   <email>hello@vstarkov.com</email>
+   <name>{{site.site_title}}</name>
+   <email>{{site.site_mail}}</email>
  </author>
 
- 
+ {% for post in site.posts %}
  <entry>
-   <title>Printer-friendly versions of specifications</title>
-   <link href="http://vstarkov.com/specs/"/>
-   <updated>2012-07-23T00:00:00+06:00</updated>
-   <id>http://vstarkov.ru/specs</id>
-   <content type="html">&lt;h1 id='printerfriendly_versions_of_specifications'&gt;Printer-friendly versions of specifications&lt;/h1&gt;
-
-&lt;p&gt;Once I wanted to have a printed version of the specification to read them when I have free time. After it I explored &lt;a href='http://webmasters.stackexchange.com'&gt;webmasters.stackexchange&lt;/a&gt; and found question about &lt;a href='http://webmasters.stackexchange.com/questions/14676/what-documentation-exists-for-html-css-and-javascript'&gt;web specifications&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;After it I found links on &lt;a href='http://www.w3.org/TR/CSS21/'&gt;CSS 2.1&lt;/a&gt;, &lt;a href='http://www.w3.org/TR/html401/'&gt;HTML 4&lt;/a&gt; and &lt;a href='http://dev.w3.org/html5/spec/single-page.html'&gt;HTML5 w3&lt;/a&gt; and &lt;a href='http://www.whatwg.org/specs/web-apps/current-work/'&gt;HTML 5 WHATWG&lt;/a&gt; specifications and that each of stable specs (CSS 2.1 and HTML 4) has several printable versions of itself. For example CSS 2.1 see at the bottom of picture&lt;br /&gt;&lt;img alt='enter image description here' src='http://i.stack.imgur.com/B2X2Z.png' /&gt;&lt;/p&gt;
-&lt;!-- more --&gt;
-&lt;h2 id='the_list_of_printable_versions_of_specifications'&gt;The list of printable versions of specifications&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href='http://www.w3.org/TR/CSS21/css2.txt'&gt;CSS 2.1 plain text&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-
-&lt;li&gt;
-&lt;p&gt;&lt;a href='http://www.w3.org/TR/CSS21/css2.pdf'&gt;CSS 2.1 pdf&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-
-&lt;li&gt;
-&lt;p&gt;&lt;a href='http://www.w3.org/TR/html401/html40.txt'&gt;HTML 4.01 plain text&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-
-&lt;li&gt;
-&lt;p&gt;&lt;a href='http://www.w3.org/TR/html401/html40.pdf.gz'&gt;HTML 4.01 gzipped pdf&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-
-&lt;li&gt;
-&lt;p&gt;&lt;a href='http://www.whatwg.org/specs/web-apps/current-work/'&gt;HTML 5 WHATWG single-page&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-
-&lt;li&gt;
-&lt;p&gt;&lt;a href='http://dev.w3.org/html5/spec/single-page.html'&gt;HTML 5 W3.org single page&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-
-&lt;li&gt;
-&lt;p&gt;&lt;a href='https://docs.google.com/open?id=0Bz1IKTLF1xFPbVg0ZE9nSDl3NzA'&gt;HTML 5 WHATWG (converted to pdf and downloaded to google drive)&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-
-&lt;li&gt;
-&lt;p&gt;&lt;a href='https://docs.google.com/open?id=0Bz1IKTLF1xFPUkJ3UEd4TE9iMVE'&gt;HTML 5 W3.org (converted to pdf and downloaded to google drive)&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;</content>
+   <title>{{ post.title }}</title>
+   <link href="{{site.site_url}}{{ post.url }}"/>
+   <updated>{{ post.date | date_to_xmlschema }}</updated>
+   <id>http://vstarkov.ru{{ post.id }}</id>
+   <content type="html">{{ post.content | xml_escape }}</content>
  </entry>
- 
- <entry>
-   <title>jsFiddle.net</title>
-   <link href="http://vstarkov.com/jsfiddle/"/>
-   <updated>2012-07-11T00:00:00+06:00</updated>
-   <id>http://vstarkov.ru/jsfiddle</id>
-   <content type="html">&lt;h1 id='jsfiddlenet'&gt;jsFiddle.net&lt;/h1&gt;
-
-&lt;p&gt;Today I want to tell you about popular tool for demonstration your web examples — &lt;a href='http://jsfiddle.net/'&gt;jsFiddle&lt;/a&gt;. For example, it very usefull to use it on sites, like &lt;a href='http://stackoverflow.com/'&gt;Stackoverflow&lt;/a&gt;. I often use this site to create a highly specialized for a demo bugs (testcase). Also it is very appropriate to be used for the project &lt;a href='http://www.highcharts.com/'&gt;Highcharts&lt;/a&gt; as a visual demonstration &lt;a href='http://jsfiddle.net/gh/get/jquery/1.7.1/highslide-software/highcharts.com/tree/master/samples/highcharts/chart/zoomtype-none/'&gt;various&lt;/a&gt; &lt;a href='http://jsfiddle.net/gh/get/jquery/1.7.1/highslide-software/highcharts.com/tree/master/samples/highcharts/title/floating/'&gt;options&lt;/a&gt;.&lt;/p&gt;
-&lt;!-- more --&gt;
-&lt;p&gt;&lt;img alt='jsFiddle' src='http://img716.imageshack.us/img716/1553/df9f77d59cfc47d6bcd6c91.png' /&gt;&lt;/p&gt;
-
-&lt;h2 id='how_to'&gt;How To&lt;/h2&gt;
-
-&lt;p&gt;In the main window there are three input-areas (HTML, CSS, JavaScript) and the one area to display the results.&lt;br /&gt;In the top sidebar there are two main buttons ‘Run’ и ‘Save’. ‘Run’ button force result area to refresh. ‘Save’ button increment fiddle&amp;#8217;s version numner, save fiddle and force result area to refresh.&lt;/p&gt;
-
-&lt;h3 id='fiddles_demonstration'&gt;Fiddle&amp;#8217;s demonstration&lt;/h3&gt;
-
-&lt;p&gt;&lt;img alt='jsFiddle sidebar' src='http://img825.imageshack.us/img825/6839/3291addb04204f7c8e0fb82.png' /&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;In the first section &lt;strong&gt;‘Choose framework’&lt;/strong&gt; You can choose which framework (jQuery, MooTools, etc.) to use and can include &lt;a href='http://necolas.github.com/normalize.css/'&gt;normalize.css&lt;/a&gt;;&lt;/li&gt;
-
-&lt;li&gt;In the &lt;strong&gt;‘Add Resources’&lt;/strong&gt; section you can include third-parties JavaScript libraries and CSS files;&lt;/li&gt;
-
-&lt;li&gt;Section &lt;strong&gt;‘Info’&lt;/strong&gt; allows you to specify a meta-tags &lt;code&gt;title&lt;/code&gt;, &lt;code&gt;description&lt;/code&gt; and select &lt;code&gt;doctype&lt;/code&gt;.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id='cabinet'&gt;Cabinet&lt;/h3&gt;
-
-&lt;ul&gt;
-&lt;li&gt;The &lt;strong&gt;Dashboard&lt;/strong&gt; section shows all you&amp;#8217;ve made fiddles;&lt;/li&gt;
-
-&lt;li&gt;&lt;strong&gt;Your Public Fiddles&lt;/strong&gt; section shows fiddles which has &lt;code&gt;title&lt;/code&gt; option setted in the &lt;strong&gt;Info&lt;/strong&gt; panel settings &lt;img alt='Your Public Fiddles' src='http://img207.imageshack.us/img207/8963/ddd70990388541d08f13588.png' /&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id='personal_review'&gt;Personal review&lt;/h3&gt;
-
-&lt;p&gt;I advise everyone to learn how to use this wonderful resource, and to share your mini works with this project. It seems to me that this is the best project for this purpose.&lt;/p&gt;</content>
- </entry>
- 
+ {% endfor %}
  
 </feed>
