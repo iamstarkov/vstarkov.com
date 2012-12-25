@@ -1,26 +1,17 @@
 ---
 layout: default
 title: Vladimir Starkov; Tech Blog
-translation: true
 ---
 
-
 <div class="span6 offset3">
-	{% for year in site.years %}
-		<h2>{{ year.first.first.date | date: "%Y" }}</h2>
-		{% for month in year %}
-			<h3>
-				{{ month.first.date | date: "%B" | replace:"January",site.i18n_january | replace:"February",site.i18n_february | replace:"March",site.i18n_march | replace:"April",site.i18n_april | replace:"May",site.i18n_may | replace:"June",site.i18n_june | replace:"July",site.i18n_july | replace:"August",site.i18n_august | replace:"September",site.i18n_september | replace:"October",site.i18n_october | replace:"November",site.i18n_november | replace:"December",site.i18n_december}}
-			</h3>
-			{% for post in month %}
-				<div>
-					<div class="daynumber--index">
-						{{post.date  | date: "%d"}}
-					</div>
 
-					<a href="{{ post.url}}">{{ post.title }}</a>
-				</div>
-			{% endfor %}
+	<ul class="unstyled">
+		{% for post in site.posts %}
+			<li>
+				<span class="daynumber--index">{{ post.date | date_to_string }}</span>
+				<a href="{{ post.url }}">{{ post.title }}</a>
+			</li>
 		{% endfor %}
-	{% endfor %}
+	</ul>
+
 </div>

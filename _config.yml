@@ -9,7 +9,7 @@ site_mail:      'hello@vstarkov.com'
 site_name:      'Vladimir Starkov'
 site_title:     'Vladimir Starkov; Tech Blog'
 
-disqus_id:      'vstarkovcom'
+# disqus_id:      'vstarkovcom'
 g_analytics_id: 'UA-33247628-1'
 g_verification: 'XodcflMjIifcToRCz8TgYAd2zySNqmAE6IKbqmqnd2o'
 
