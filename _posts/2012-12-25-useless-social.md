@@ -11,7 +11,7 @@ Why I deactivate accounts in two social nets.
 I deactivate accounts in two nets.  
 It were [facebook](http://facebook.com) and [vkontakte](http://vk.com/). 
 
-Why?
+Why? 
 
 Because, I didn’t use facebook in last six months at all.  
 And what about vkontakte? I sometimes had problems with my sparetime — I spend all the freetime for stupid serfing in myriads of pseudo funny pictures. It was harmfull for me to procrastinate without any valuable action.
