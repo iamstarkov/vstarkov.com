@@ -2,7 +2,6 @@
 layout: post
 title: Useless social nets and maybe harmfull
 categories : [Social nets]
-isNotTranslated: true
 ---
 
 Why I deactivate accounts in two social nets.
