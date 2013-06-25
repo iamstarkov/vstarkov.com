@@ -1,23 +1,24 @@
 ---
 layout: page
-title: Обо мне
+title: About
 translation: true
 ---
 
 
-Обо мне
+About
 ------------------------------------------------------------
 
+Hi, I'm living in Ekaterinburg and handcraft frontend code. In my spare time, I
+also interested in work. You can always ask me about Sublime Text, Jekyll,
+Markdown, Git, and typography.
 
-Привет, я живу в Екатеринбурге и занимаюсь фронтенд-разработкой. В свободное
-время интересуюсь работой. Всегда смогу рассказать что-нибудь про Sublime
-Text, Jekyll, Markdown, Git и типографику.
-
-Пишу в [*блог*][0], разрабатываю свои проекты на [*GitHub*][1], коротко пишу в [*Twitter*][2], отвечаю на вопросы на [*StackOverflow*][3], перевожу для [*frontender.info*][4].
+I write in my [*blog*][0], develope my projects at [*GitHub*][1], shortly write
+in [*Twitter*][2], answer the qustions at [*StackOverflow*][3] and participate
+in [*frontender.info*][4].
 
 {% include follow.html %}
 
-![Владимир Старков][5]
+![Vladimir Starkov][5]
 
 [0]: /
 [1]: http://github.com/matmuchrapna
