@@ -1,0 +1,39 @@
+{% assign year="exampleYear" %}
+{% assign month="exampleMonth" %}
+{% assign day="exampleDay" %}
+{% include months.html %}
+
+<div class="timeline">
+	<div class="timeline__heading">
+		{{ site.i18n_all_articles[site.locale] }}
+	</div>
+
+	<ul class="timeline__list">
+		{% for post in site.posts %}
+			<li class="timeline__item">
+				
+			{% assign postYear=post.date | date: "%Y" %}
+			{% assign postMonth=post.date | date: "%B" %}
+			{% assign postDay=post.date | date: "%d" %}
+
+			{% if year != postYear %}
+				{% assign year=postYear %}
+				<div class="timeline__year" data-text="{{ year }}"></div>
+			{% endif %}
+			{% if month != postMonth %}
+				{% assign month=postMonth %}
+				<div class="timeline__month" data-text="{{ month | replace:"January",january | replace:"February",february | replace:"March",march | replace:"April",april | replace:"May",may | replace:"June",june | replace:"July",july | replace:"August",august | replace:"September",september | replace:"October",october | replace:"November",november | replace:"December",december }}"></div>
+						
+			{% endif %}
+				<div class="timeline__post">
+					<div class="timeline__day" data-text="{{postDay}}"></div>
+					{% if post.external_link == null %}
+						<a href="{{ post.url }}">{{ post.title }}</a>
+					{% else %}
+						<a href="{{ post.external_link }}">{{ post.title }}</a>
+					{% endif %}
+				</div>
+			</li>
+		{% endfor %}
+	</ul>
+</div>

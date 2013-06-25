@@ -2,24 +2,35 @@
 layout: default
 ---
 
-<div class="span6 offset3">
-	<article>
-		<div>
-			{{ content }}
-		</div>
-		{% if site.disqus_id %}
-			<aside>
-				<div id="disqus_thread"></div>
-				<script type="text/javascript">
-					var disqus_shortname = '{{site.disqus_id}}';
-					(function() {
-						var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-						dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
-						(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-					})();
-				</script>
-			</aside>
-		{% else %}
-		{% endif %}
-	</article>
+
+<div class="post"
+	itemscope itemtype="http://schema.org/Article" itemref="_articleUrl">
+	<div class="heading-wrap">
+		<div class="heading  heading--primary"><a href="/">{{ site.i18n_site_name_short[site.locale] }}</a></div>:
+		<h1 class="heading heading--secondary" itemprop="name">
+			{% if page.external_link == null %}
+				<a href="{{ page.url }}">{{ page.title }}</a>
+			{% else %}
+				<a href="{{ page.external_link }}">{{ page.title }}</a>
+			{% endif %}
+		</h1>
+	</div>
+	
+	<div class="post__date">
+		{% include months.html %}
+
+		{{ page.date | date_to_long_string  | replace:"January",january | replace:"February",february | replace:"March",march | replace:"April",april | replace:"May",may | replace:"June",june | replace:"July",july | replace:"August",august | replace:"September",september | replace:"October",october | replace:"November",november | replace:"December",december }}
+	</div>
+
+	<div class="entry" itemprop="articleBody">
+		{% assign h1 = content | first %}
+		{{ content | replace:h1,'' | | replace:'<h1','<h1 class="h1"' | replace:'<h2','<h2 class="h2"' | replace:'<h3','<h3 class="h3"' | replace:'<h4','<h4 class="h4"' | replace:'<h4','<h4 class="h4"' | replace:'<h5','<h5 class="h5"' | replace:'<h6','<h6 class="h6"' }}
+		
+	</div>
 </div>
+
+{% include share.html %}
+{% include related.html %}
+{% include around-nav.html %}
+{% include follow.html %}
+

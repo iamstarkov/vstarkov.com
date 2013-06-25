@@ -1,35 +1,119 @@
-safe:           false
-auto:           true
-server:         yes
+locale:         'ru'
 permalink:      /:title/
 
-site_url:       'http://vstarkov.com'
-site_rss:       '/atom.xml'
-site_mail:      'hello@vstarkov.com'
-site_name:      'Vladimir Starkov'
-site_title:     'Vladimir Starkov; Tech Blog'
+safe:           false
+lsi:            BOOL
+markdown:       kramdown
 
-# disqus_id:      'vstarkovcom'
-g_analytics_id: 'UA-33247628-1'
-g_verification: 'XodcflMjIifcToRCz8TgYAd2zySNqmAE6IKbqmqnd2o'
+site_mail:      'matmuchrapna@gmail.com'
 
-mirror_url:     'http://vstarkov.ru'
-mirror_title:   'На русском'
+#mirror_url:     'http://vstarkov.com'
+#mirror_title:   'In english'
 
-i18n_lang_code: 'en'
-i18n_about:     'About'
-i18n_rss:       'RSS'
-i18n_close:     'Close'
 
-i18n_january:   'January'
-i18n_february:  'February'
-i18n_march:     'March'
-i18n_april:     'April'
-i18n_may:       'May'
-i18n_june:      'June'
-i18n_july:      'July'
-i18n_august:    'August'
-i18n_september: 'September'
-i18n_october:   'October'
-i18n_november:  'November'
-i18n_december:  'December'
+# _includes/share.html
+i18n_cta_share:     
+  'en': 'Расскажите друзьям про эту статью в'
+  'ru': 'Share this article to your friends from'
+i18n_cta_share_tw:
+  'en': 'Twitter'
+  'ru': 'Twitter'
+i18n_cta_share_and:
+  'en': ' и '
+  'ru': ' and '
+i18n_cta_share_fb:
+  'en': 'Facebook'
+  'ru': 'Facebook'
+i18n_cta_share_gp:
+  'en': 'Google Plus'
+  'ru': 'Google Plus'
+i18n_twitter:
+  'en': 'matmuchrapna'
+  'ru': 'matmuchrapna'
+
+
+# _includes/follow.html
+i18n_cta_follow:
+  'en': 'Follow me on twitter'
+  'ru': 'Подписывайтесь на меня в твиттере'
+
+
+# _includes/gauges.html
+i18n_data-site-id:
+  'en': '51bc4a78108d7b45ec000005'
+  'ru': '51aeac4ff5a1f575d5000078'
+
+
+# _includes/head.html
+i18n_rss_url:
+  'en': 'http://feeds.feedburner.com/vstarkovcom'
+  'ru': 'http://feeds.feedburner.com/vstarkovru'
+i18n_site_name_short:
+  'en': 'Vladimir Starkov'
+  'ru': 'Владимир Старков'
+i18n_site_name:
+  'en': 'Vladimir Starkov; professional blog'
+  'ru': 'Владимир Старков; технический блог'
+i18n_site_url:
+  'en': 'http://vstarkov.com'
+  'ru': 'http://vstarkov.ru'
+
+
+# _includes/menu.html
+i18n_blog:
+  'en': 'Blog'
+  'ru': 'Блог'
+i18n_subscribe:
+  'en': 'Subscribe'
+  'ru': 'Подписаться'
+i18n_about:
+  'en': 'About'
+  'ru': 'Обо мне'
+
+
+# _includes/related.html
+i18n_related_articles:
+  'en': 'Related articles: '
+  'ru': 'Похожие статьи: '
+
+
+# _includes/timeline.html
+i18n_all_articles:
+  'en': 'All rticles'
+  'ru': 'Все статьи'
+i18n_january:
+  'en': 'January'
+  'ru': 'Январь'
+i18n_february:
+  'en': 'February'
+  'ru': 'Февраль'
+i18n_march:     
+  'en': 'March'
+  'ru': 'Март'
+i18n_april:     
+  'en': 'April'
+  'ru': 'Апрель'
+i18n_may:       
+  'en': 'May'
+  'ru': 'Май'
+i18n_june:      
+  'en': 'June'
+  'ru': 'Июнь'
+i18n_july:      
+  'en': 'July'
+  'ru': 'Июль'
+i18n_august:    
+  'en': 'August'
+  'ru': 'Август'
+i18n_september: 
+  'en': 'September'
+  'ru': 'Сентябрь'
+i18n_october:   
+  'en': 'October'
+  'ru': 'Октябрь'
+i18n_november:  
+  'en': 'November'
+  'ru': 'Ноябрь'
+i18n_december:  
+  'en': 'December'
+  'ru': 'Декабрь'

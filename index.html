@@ -1,18 +1,51 @@
 ---
 layout: default
-title: Vladimir Starkov; Tech Blog
+title: Владимир Старков; технический блог
 ---
 
-<div class="span6 offset3">
+{% assign isFoundNormalPost = 'false' %}
+{% assign normalPostId = 0 %}
 
+{% for post in site.posts %}
+	{% if isFoundNormalPost != 'true' %}
+		{% if post.external_link == null %}
+			{% assign normalPostId = forloop.index0 %}
+			{% assign isFoundNormalPost = 'true' %}
+		{% endif %}
+	{% endif %}
+{% endfor %}
 
-	<ul class="unstyled">
-		{% for post in site.posts %}
-			<li>
-				<span class="daynumber--index">{{ post.date | date_to_string }}</span>
-				<a href="{{ post.url }}">{{ post.title }}</a>
-			</li>
-		{% endfor %}
-	</ul>
+<div class="post"
+	itemscope itemtype="http://schema.org/Article" itemref="_articleUrl">
+	{% for post in site.posts limit:1 offset:normalPostId %}
+		<div class="heading-wrap">
+			<h1 class="heading  heading--primary"><a href="/">{{ site.i18n_site_name_short[site.locale] }}</a></h1>:
+			<h2 class="heading heading--secondary" itemprop="name">
+				{% if post.external_link == null %}
+					<a href="{{ post.url }}">{{ post.title }}</a>
+				{% else %}
+					<a href="{{ post.external_link }}">{{ post.title }}</a>
+				{% endif %}
+			</h2>
+		</div>
 
+		<div class="post__date">
+			{% include months.html %}
+			
+			{{ post.date | date_to_long_string  | replace:"January",january | replace:"February",february | replace:"March",march | replace:"April",april | replace:"May",may | replace:"June",june | replace:"July",july | replace:"August",august | replace:"September",september | replace:"October",october | replace:"November",november | replace:"December",december }}
+		</div>
+
+		<div class="entry" itemprop="articleBody">
+			{% assign h1 = post.content | first %}
+			{{ post.content | replace:h1,'' | replace:'</h6','</div' | replace:'<h6','<div class="h6" ' | replace:'</h5','</h6' | replace:'<h5','<h6 class="h5" ' | replace:'</h4','</h5' | replace:'<h4','<h5 class="h4" ' | replace:'</h3','</h4' | replace:'<h3','<h4 class="h3" ' | replace:'</h2','</h3' | replace:'<h2','<h3 class="h2" ' | replace:'</h1','</h2' | replace:'<h1','<h2 class="h1"' }}
+		</div>
+
+		{% include follow.html %}
+	{% endfor %}
 </div>
+
+{% include timeline.html %}
+{% include subscribe.html %}
+
+
+
