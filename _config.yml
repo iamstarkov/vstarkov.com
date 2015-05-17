@@ -34,8 +34,8 @@ i18n_cta_share_gp:
   'en': 'Google Plus'
   'ru': 'Google Plus'
 i18n_twitter:
-  'en': 'matmuchrapna'
-  'ru': 'matmuchrapna'
+  'en': 'iamstarkov'
+  'ru': 'iamstarkov'
 
 
 # _includes/follow.html
